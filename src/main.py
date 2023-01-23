@@ -1,3 +1,7 @@
+"""
+this code is written just to understand original dataset.
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
