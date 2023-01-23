@@ -25,15 +25,18 @@ The corresponding time-series is sampled into 4097 data points. Each data point 
 That is divided and shuffled every 4097 data points into 23 chunks, each chunk contains 178 data points for 1 second, and each data point is the value of the EEG recording at a different point in time. So now we have 23 x 500 = 11500 pieces of information(row), each information contains 178 data points for 1 second(column), the last column represents the label y {1,2,3,4,5}.  The response variable is y in column 179, the Explanatory variables X1, X2, …, X178 y contains the category of the 178-dimensional input vector. 
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 004](https://user-images.githubusercontent.com/11960564/213981894-41f9c331-4392-4f46-8213-27637ec05ea7.png)
+
 *Figure 2 Dataset (11500 row x 180 column)*
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 005](https://user-images.githubusercontent.com/11960564/213981914-75e35e8c-0a62-413d-a58d-4d37a97e5a63.png)
+
 *Figure 3 Data Categories*
 
 Figure 3 shows that every category has 2300 rows.
 
 Some samples from different categories.
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 006](https://user-images.githubusercontent.com/11960564/213981959-d9734f3c-3eb8-483a-819c-3e598736530c.png)
+
 *Figure 4 One sample line of data from different categories*
 
 **Data Pre-Processing**
@@ -48,6 +51,7 @@ Data pre-processing is an important step in any machine learning or data analysi
 
 By checking with the **isnull().sum()** function, we can understand that **there is no missing** values.
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 007](https://user-images.githubusercontent.com/11960564/213981992-46e01f60-c17e-49bf-a850-cb2de3ab69df.png)
+
 *Figure 5 Checking Missing Values*
 
 **Data Cleaning**
@@ -58,6 +62,7 @@ Removing unnecessary data is a process of eliminating data that is not needed fo
 
 Then the target variable was converted into binary classes (1 for seizure and 0 for no seizure).
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 008](https://user-images.githubusercontent.com/11960564/213982019-e53dda9c-1304-4b54-8e3b-912101a77ed0.png)
+
 *Figure 6 Unnamed column is removed*
 
 **Classification**
@@ -71,6 +76,7 @@ The PyCaret library is used for to create classic Machine Learning models. With 
 **Light Gradient Boosting** model has best accuracy rate with **0,9725.** 
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 009](https://user-images.githubusercontent.com/11960564/213982041-ce67f85c-91ac-4044-b4a0-279a5d6bc910.png)
+
 *Figure 7 Experimantal Results for Machine Learning Algorithms*
 
 **Optimal set of hyperparameters** 
@@ -84,22 +90,28 @@ Tunemodel  function is used to optimize the performance of a machine learning mo
 
 1D Convolutional Neural Networks (CNNs) can be used when the input data is a sequence of one-dimensional values, such as time series data, audio signals, or text data. They are particularly useful for extracting features from the data and recognizing patterns, and are often used for tasks such as time series prediction, audio classification, and natural language processing. So a CNN model is used to create a new model. 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 011](https://user-images.githubusercontent.com/11960564/213982095-08ee171e-3f8f-49ef-98e9-7ca922bda27b.png)
+
 *Figure 8 Created CNN Model*
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 012](https://user-images.githubusercontent.com/11960564/213982136-813dafac-24ae-4c4d-8a01-78f8d7023486.png)
+
 *Figure 9 Created CNN Model Features*
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 013](https://user-images.githubusercontent.com/11960564/213982171-ae11e67f-15cb-4e07-9c26-428e93b07c2c.png)
+
 *Figure 10 History for Accuracy*
 
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 014](https://user-images.githubusercontent.com/11960564/213982200-e4abc1d2-fc33-4bd1-b0e4-490d4acfaf8f.png)
+
 *Figure 11  History for Loss*
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 015](https://user-images.githubusercontent.com/11960564/213982219-387ac8b4-5ec0-4a6f-a86a-9c388e44e5a2.png)
+
 *Figure 12 Classification Report*
 
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 016](https://user-images.githubusercontent.com/11960564/213982236-ddda6be4-3d2c-40bb-b383-e798b35c4e29.png)
+
 *Figure 13 Confusion Matrix of created CNN model.*
 
 
