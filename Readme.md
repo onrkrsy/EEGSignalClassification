@@ -35,6 +35,7 @@ That is divided and shuffled every 4097 data points into 23 chunks, each chunk c
 Figure 3 shows that every category has 2300 rows.
 
 Some samples from different categories.
+
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 006](https://user-images.githubusercontent.com/11960564/213981959-d9734f3c-3eb8-483a-819c-3e598736530c.png)
 
 *Figure 4 One sample line of data from different categories*
@@ -50,6 +51,7 @@ Data pre-processing is an important step in any machine learning or data analysi
 **Checking Missing Data**
 
 By checking with the **isnull().sum()** function, we can understand that **there is no missing** values.
+
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 007](https://user-images.githubusercontent.com/11960564/213981992-46e01f60-c17e-49bf-a850-cb2de3ab69df.png)
 
 *Figure 5 Checking Missing Values*
@@ -61,6 +63,7 @@ Removing unnecessary data is a process of eliminating data that is not needed fo
 **The first column** contains a cookie for each row. There will be no meaningful data in the classification process. So we **remove** the first column.
 
 Then the target variable was converted into binary classes (1 for seizure and 0 for no seizure).
+
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 008](https://user-images.githubusercontent.com/11960564/213982019-e53dda9c-1304-4b54-8e3b-912101a77ed0.png)
 
 *Figure 6 Unnamed column is removed*
@@ -82,6 +85,7 @@ The PyCaret library is used for to create classic Machine Learning models. With 
 **Optimal set of hyperparameters** 
 
 Tunemodel function in PyCater library that is used to find the optimal set of hyperparameters for a given machine learning model. Hyperparameters are parameters that are not learned from the data, but rather set before training the model. Examples of common hyperparameters include the learning rate, number of hidden layers, and regularization term.
+
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 010](https://user-images.githubusercontent.com/11960564/213982062-e453142b-7d84-42b4-a759-43071f3d0a5f.png)
 
 Tunemodel  function is used to optimize the performance of a machine learning model by finding the best set of hyperparameters for the given dataset. With hyperparameter optimizing the accuracy value is improved from **0,9725** to **0,9839**
