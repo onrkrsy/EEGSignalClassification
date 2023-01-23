@@ -5,13 +5,15 @@ import seaborn as sns
 import tensorflow as tf
 from keras import Sequential
 from keras.layers import Conv1D, MaxPool1D, Dropout, Flatten, Dense
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 
 eeg_data= pd.read_csv('Datas/Epileptic Seizure Recognition.csv')
 print(eeg_data.head())
@@ -83,7 +85,7 @@ X_train.shape,y_test.shape
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
-
+print(X_train);
 """
 # Support Vector Classifier
 from sklearn.svm import SVC
@@ -141,13 +143,22 @@ def classifiers(models):
         predictions = clf.predict(X_test)
         # Use score method to get accuracy of model
         score = clf.score(X_test, y_test)
+        #scores = cross_val_score(clf, X, y, cv=5)
         print('Score of classifier {} is: {} \n'.format(type(model).__name__, score))
         df_result['Score']['{}'.format(type(model).__name__)] = str(round(score * 100, 2)) + '%'
         df_result['Predictions']['{}'.format(type(model).__name__)] = predictions
     return df_result
 
-#print(classifiers(models))
+print(classifiers(models))
 
 ann = ModelANN()
-ann.fit(X_train, y_train, validation_data=(X_test,y_test), epochs=100, batch_size=128, verbose=2)
+ann.fit(X_train, y_train, validation_data=(X_test,y_test), epochs=10, batch_size=128, verbose=2)
 #ortlama sonuç?
+
+# cross validation & confusion matrix yapılacak.
+
+y_prop = ann.predict(X_test)
+y_pred = np.argmax(y_prop)
+confusion_matrix(y_test, y_pred)
+print(classification_report(y_test, y_pred, labels=[0,1]))
+pass
