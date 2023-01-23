@@ -89,6 +89,7 @@ Tunemodel  function is used to optimize the performance of a machine learning mo
 **CNN Model** 
 
 1D Convolutional Neural Networks (CNNs) can be used when the input data is a sequence of one-dimensional values, such as time series data, audio signals, or text data. They are particularly useful for extracting features from the data and recognizing patterns, and are often used for tasks such as time series prediction, audio classification, and natural language processing. So a CNN model is used to create a new model. 
+
 ![Aspose Words 4f30531d-e2a6-4733-a6b2-be1369365238 011](https://user-images.githubusercontent.com/11960564/213982095-08ee171e-3f8f-49ef-98e9-7ca922bda27b.png)
 
 *Figure 8 Created CNN Model*
