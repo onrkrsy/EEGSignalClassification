@@ -1,4 +1,4 @@
-﻿![](Aspose.Words.4f30531d-e2a6-4733-a6b2-be1369365238.001.png)**Machine Learning in Bioinformatics		Onur KARASOY**
+
 
 **Epileptic Seizure Recognition**
 
